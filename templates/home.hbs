@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="/home.css">
+    <script src="https://unpkg.com/htmx.org@1.5.0"></script>
+</head>
+<body>
+
+    
+    <div class="container">
+        <h1>Welcome to Todo App</h1>
+        <div id="content">
+        <p>Manage your tasks efficiently and effectively.</p>
+        </div>
+        <div class="links">
+            <a hx-get="/login" hx-target="#content" hx-swap="innerHTML" class="btn">Sign In</a>
+            <a hx-get="/signup" hx-target="#content" hx-swap="innerHTML" class="btn">Sign Up</a>
+        </div>
+    </div>
+    
+</body>
+</html>
