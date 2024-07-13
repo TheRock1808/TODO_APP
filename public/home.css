@@ -141,3 +141,14 @@ p {
   a:hover {
     color: #fff;
   }
+
+  //signup
+
+  
+  .acc {
+    color: #a8a8a8;
+    text-decoration: none;
+    margin-left: 210px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+  }
