@@ -7,14 +7,48 @@
     <title>Login Form</title>
 </head>
 <body>
-    <form action="/loginform" method="post">
-        <input placeholder="Email" name="email" type="email" required>
-        <br>
-        <input placeholder="Password" name="password" type="password" required>
-        <br>
-        <input class="sub" value="login" type="submit">
-        <br>
-    </form>
+    <div class="container">
+      <h1>LOGIN PAGE</h1>
+      <!-- User name  -->
+      <form
+        id="loginForm"
+        hx-post="/login"
+        hx-target="#loginForm"
+        hx-swap="innerHTML"
+      >
+        <div class="login-content">
+          <div class="input-div one">
+            <div class="i">
+              <i class="fas fa-user"></i>
+            </div>
+            <input
+              type="email"
+              class="input"
+              name="username"
+              placeholder="Username"
+              required
+            />
+          </div>
+          <!-- Password -->
+          <div class="input-div pass">
+            <div class="i">
+              <i class="fas fa-lock"></i>
+            </div>
+            <div class="div">
+              <input
+                type="password"
+                class="input"
+                name="password"
+                placeholder="Password"
+                required
+              />
+            </div>
+          </div>
+          <a href="signup.html">Create New Account</a>
+          <input type="submit" class="btn" value="Login" />
+        </div>
+      </form>
+    </div>
 
 </body>
 </html>
