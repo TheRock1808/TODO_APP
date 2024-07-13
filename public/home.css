@@ -130,7 +130,7 @@ p {
     margin-bottom: 10px;
   }
 
-  a {
+  a .cre {
     color: #a8a8a8;
     text-decoration: none;
     margin-left: 245px;
@@ -145,7 +145,7 @@ p {
   //signup
 
   
-  .acc {
+  a .acc{
     color: #a8a8a8;
     text-decoration: none;
     margin-left: 210px;
