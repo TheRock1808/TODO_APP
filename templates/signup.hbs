@@ -19,9 +19,8 @@
       <!-- User name  -->
       <form
         id="signupForm"
-        hx-post="/signup"
-        hx-target="#signupForm"
-        hx-swap="innerHTML"
+        action="/signupform"
+        method="post"
       >
         <div class="login-content">
           <!-- Name -->
@@ -44,8 +43,8 @@
             <input
               type="email"
               class="input"
-              name="username"
-              placeholder="Username"
+              name="email"
+              placeholder="Email"
               required
             />
           </div>
@@ -64,10 +63,9 @@
               />
             </div>
           </div>
-          <a class="acc" href="login.hbs">Already have a account?</a>
+          <a class="acc" hx-get="/login" hx-target="body" hx-swap="innerHTML">Already have a account?</a>
 
-          {{!-- <a href="login.hbs" class="acc">Already have a account?</a> --}}
-          <input type="submit" class="btn" value="SignUp" />
+          <input type="submit" class="btn" value="Sign Up" />
         </div>
       </form>
     </div>

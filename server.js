@@ -19,8 +19,9 @@ app.get('/', (req, res) => {
 })
 
 app.get('/login', (req, res) => {
-    // res.render('login')
-    res.sendFile('templates/login.hbs',{root:__dirname})
+    res.render('login')
+    // res.sendFile('templates/login.hbs',{root:__dirname})
+
 })
 app.post('/loginform', async (req, res) => {
   try{
@@ -40,7 +41,7 @@ app.post('/loginform', async (req, res) => {
 })
 
 app.get('/signup', (req, res) => {
-  res.render('signup');
+  res.sendFile('templates/signup.hbs',{root:__dirname})
 })
 app.post('/signupform', async (req, res) => {
   const data = {

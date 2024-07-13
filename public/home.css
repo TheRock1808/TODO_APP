@@ -51,7 +51,7 @@ p {
     box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
     transform: translateY(-2px);
 }
-//login page
+/* //login page */
 
 
   h1 {
@@ -130,25 +130,28 @@ p {
     margin-bottom: 10px;
   }
 
-  a .cre {
+  a.cre {
     color: #a8a8a8;
-    text-decoration: none;
+    text-decoration: underline;
     margin-left: 245px;
     margin-bottom: 10px;
-    text-decoration: underline;
+    text-align: center;
+    
   }
-
-  a:hover {
-    color: #fff;
-  }
-
-  //signup
 
   
-  a .acc{
+  /* //signup */
+
+  
+  a.acc{
     color: #a8a8a8;
     text-decoration: none;
     margin-left: 210px;
     margin-bottom: 10px;
     text-decoration: underline;
+  }
+  
+
+  a:hover {
+    color: #fff;
   }

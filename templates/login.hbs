@@ -17,9 +17,8 @@
       <!-- User name  -->
       <form
         id="loginForm"
-        hx-post="/login"
-        hx-target="#loginForm"
-        hx-swap="innerHTML"
+        action="/loginform"
+        method="post"
       >
         <div class="login-content">
           <div class="input-div one">
@@ -29,8 +28,8 @@
             <input
               type="email"
               class="input"
-              name="username"
-              placeholder="Username"
+              name="email"
+              placeholder="Email"
               required
             />
           </div>
@@ -49,7 +48,7 @@
               />
             </div>
           </div>
-          <a href="signup.hbs" class="cre">Create New Account</a>
+          <a hx-get="/signup" hx-target="body" hx-swap="innerHTML" class="cre">Create New Account</a>
           <input type="submit" class="btn" value="Login" />
         </div>
       </form>
