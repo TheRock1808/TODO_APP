@@ -33,6 +33,7 @@ p {
     display: flex;
     justify-content: space-around;
     gap: 1rem;
+    cursor: pointer;
 }
 
 .btn {
@@ -44,12 +45,14 @@ p {
     transition: all 0.3s ease;
     font-size: 1rem;
     box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    cursor: pointer;
 }
 
 .btn:hover {
     background-color: #0056b3;
     box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
     transform: translateY(-2px);
+    cursor: pointer;
 }
 //login page
 
@@ -57,34 +60,6 @@ p {
   h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-  }
-
-  p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-  }
-
-  .links {
-    display: flex;
-    justify-content: space-around;
-    gap: 1rem;
-  }
-
-  .btn {
-    text-decoration: none;
-    padding: 0.75rem 2rem;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-    font-size: 1rem;
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
-  }
-
-  .btn:hover {
-    background-color: #0056b3;
-    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
-    transform: translateY(-2px);
   }
 
   .login-content {
@@ -130,25 +105,32 @@ p {
     margin-bottom: 10px;
   }
 
-  a .cre {
+.cre {
     color: #a8a8a8;
     text-decoration: none;
     margin-left: 245px;
     margin-bottom: 10px;
     text-decoration: underline;
+    cursor: pointer;
   }
 
   a:hover {
     color: #fff;
   }
 
-  //signup
-
-  
-  a .acc{
+.acc{
     color: #a8a8a8;
     text-decoration: none;
-    margin-left: 210px;
+    margin-left: 200px;
     margin-bottom: 10px;
     text-decoration: underline;
+    cursor: pointer;
+  }
+
+a>i {
+    margin-right: 400px;
+    color: #a8a8a8;
+    text-decoration: none;
+    cursor: pointer;
+
   }
