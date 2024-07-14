@@ -33,7 +33,7 @@
             font-size: 18px;
             margin: 0 15px;
         }
-        .navbar button {
+        .navbar a {
             background-color: #070707;
             color: white;
             border: none;
@@ -42,8 +42,9 @@
             padding: 10px 15px;
             box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
             margin-right: 80px;
+            text-decoration:none
         }
-        .navbar button:hover {
+        .navbar a:hover {
             background-color: #0056b3;
             box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
             transform: translateY(-2px);
@@ -111,15 +112,21 @@
         .task-item button:hover {
             background-color: #020202;
         }
+        .callname{
+            color:black
+        }
     </style>
     <script src="https://unpkg.com/htmx.org@1.8.4"></script>
 </head>
 <body>
     <div class="navbar">
         <div>
-            <p>Todo</p></div>
-            <button id="logout-btn">Logout</button> 
+            <p>Todo App</p>
         </div>
+        <a href = "/logout" id="logout-btn">Logout</a> 
+        
+    </div>
+    <h1 class="callname">Welcome {{naming}}!</h1>
            
     </div>
     <div class="container">

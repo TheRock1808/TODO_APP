@@ -7,15 +7,14 @@ const hbs = require('hbs');
 const port = 3000;
 const collection = require('./src/mongo.js');
 
-// Session middleware configuration
+
 app.use(session({
-  secret: 'your_secret_key', // Replace with your own secret key for session encryption
+  secret: 'SecretTodo', 
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: false } // Set secure to true if using HTTPS
+  cookie: { secure: false } 
 }));
 
-// Other middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
@@ -33,11 +32,21 @@ app.get('/', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-    res.render('login')
+
+  if (req.session.user) {
+    res.redirect('/dashboard'); 
+  } else {
+    res.render('login'); 
+  }
+
     // res.sendFile('templates/login.hbs',{root:__dirname})
 
 })
 app.post('/loginform', async (req, res) => {
+  if (req.session.user) {
+    res.redirect('/dashboard'); 
+  } else {
+    
   try {
     const { email, password } = req.body;
     const user = await collection.findOne({ email });
@@ -52,6 +61,7 @@ app.post('/loginform', async (req, res) => {
     console.error('Login error:', error);
     res.status(500).send({ message: 'An error occurred. Please try again later.' });
   }
+}
 });
 
 
@@ -59,10 +69,18 @@ app.post('/loginform', async (req, res) => {
 
 
 app.get('/signup', (req, res) => {
-  res.render('signup');
+  if (req.session.user) {
+    res.redirect('/dashboard'); 
+  } else {
+    res.render('signup'); 
+  }
 });
 
 app.post('/signupform', async (req, res) => {
+  if (req.session.user) {
+    res.redirect('/dashboard'); 
+  } else {
+    
   const data = {
     name: req.body.name,
     email: req.body.email,
@@ -70,21 +88,20 @@ app.post('/signupform', async (req, res) => {
   };
 
   try {
-    const existingUser = await collection.findOne({ email : req.body.email });
+    const existingUser = await collection.findOne({ email: req.body.email });
     if (existingUser) {
-      res.status(409).render("signup", { message: 'User details already exist' });
+      return res.status(409).render("signup", { message: 'User details already exist' });
     } else {
       await collection.insertMany([data]);
+
+      req.session.user = data; // Store user data in the session
+      res.redirect('/dashboard');
     }
   } catch (error) {
     console.error('Error inserting data:', error);
     res.status(500).send({ message: 'Internal Server Error' });
   }
-
-//   res.status(201).render("dashboard", {
-//     naming: req.body.name
-// })
-res.status(201).redirect("/dashboard")
+}
 });
 
 
