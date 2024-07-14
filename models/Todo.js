@@ -15,8 +15,11 @@ const TodoSchema = new mongoose.Schema(
             trim: true,
             maxlength: 30,
         },
+        complete: {
+            type: Boolean,
+            default: false,
+        }
     },
-    {timestamps: true}
 );
 
 module.exports = mongoose.model("todos", TodoSchema);
