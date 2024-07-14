@@ -1,114 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Do List</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #72EDF2 10%, #5151E5 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-            width: 300px;
-            text-align: center;
-        }
-        h1 {
-            margin-bottom: 20px;
-            color: #fffefe;
-        }
-        .input-section {
-            display: flex;
-            justify-content: space-between;
-        }
-        #task-input {
-            width: 70%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        #add-task-btn {
-            width: 20%;
-            padding: 10px;
-            border: none;
-            background-color: #070707;
-            color: white;
-            border-radius: 4px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
-        }
-        #add-task-btn:hover {
-            background-color: #0056b3;
-            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
-            transform: translateY(-2px);
-        }
-        #task-list {
-            list-style-type: none;
-            padding: 0;
-            margin-top: 20px;
-        }
-        .task-item {
-            background: #e2e2e2;
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 4px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .task-item button {
-            background-color: #fffefe;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            padding: 5px 10px;
-        }
-        .task-item button:hover {
-            background-color: #020202;
-        }
+      
     </style>
     <script src="https://unpkg.com/htmx.org@1.8.4"></script>
-</head>
-<body>
-    <div class="container">
-        <h1>To-Do List</h1>
-        <div class="input-section">
-            <input type="text" id="task-input" placeholder="Add a new task">
-            <button id="add-task-btn" 
-                hx-post="/add-task" 
-                hx-include="#task-input" 
-                hx-swap="beforeend:outerHTML">Add Task
-            </button>
-        </div>
-        <ul id="task-list">
-        </ul>
-    </div>
-
-    <script>
-        document.addEventListener('htmx:configRequest', (event) => {
-            event.detail.headers['Content-Type'] = 'application/json';
-        });
-
-        document.addEventListener('htmx:beforeOnLoad', (event) => {
-            const response = JSON.parse(event.detail.xhr.response);
-            const listItem = document.createElement('li');
-            listItem.className = 'task-item';
-            listItem.innerHTML = `
-                <span>${response.task}</span>
-                <button hx-delete="/delete-task" hx-vals='{"task": "${response.task}"}' hx-swap="outerHTML">Delete</button>
-            `;
-            document.getElementById('task-list').appendChild(listItem);
-        });
-    </script>
-</body>
+  </head>
+  <body>
+    
+  </body>
 </html>

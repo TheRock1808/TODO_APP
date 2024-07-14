@@ -5,13 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo App</title>
-    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="/dashboard.css">
     <script src="https://unpkg.com/htmx.org@1.5.0"></script>
 </head>
 <body>
+    <div class="container">
+      <h1>To-Do List</h1>
+      <div class="input-section">
+        <input type="text" id="task-input" placeholder="Add a new task" />
+        <button
+          id="add-task-btn"
+          hx-post="/add-task"
+          hx-include="#task-input"
+          hx-swap="beforeend:outerHTML"
+        >
+          Add Task
+        </button>
+      </div>
+      <ul id="task-list"></ul>
+    </div>
 
-    
-    <h1>Hello {{naming}}</h1>
-    
+    <script>
+      document.addEventListener("htmx:configRequest", (event) => {
+        event.detail.headers["Content-Type"] = "application/json";
+      });
+
+      document.addEventListener("htmx:beforeOnLoad", (event) => {
+        const response = JSON.parse(event.detail.xhr.response);
+        const listItem = document.createElement("li");
+        listItem.className = "task-item";
+        listItem.innerHTML = `
+                <span>${response.task}</span>
+                <button hx-delete="/delete-task" hx-vals='{"task": "${response.task}"}' hx-swap="outerHTML">Delete</button>
+            `;
+        document.getElementById("task-list").appendChild(listItem);
+      });
+    </script>
 </body>
 </html>
