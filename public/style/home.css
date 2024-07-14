@@ -54,8 +54,6 @@ p {
     transform: translateY(-2px);
     cursor: pointer;
 }
-/* //login page */
-
 
   h1 {
     font-size: 2.5rem;
@@ -113,9 +111,6 @@ p {
     text-align: center;
     
   }
-
-  
-  /* //signup */
 
   
   a.acc{
