@@ -9,6 +9,7 @@ body {
 }
 .container {
     background: rgba(0, 0, 0, 0.6);
+    
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
@@ -73,10 +74,16 @@ h1 {
 }
 
 .navbar {
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px 20px;
+    width: 100%;
+    padding: 10px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: transparent;
 }
 
 nav .link {
@@ -114,7 +121,7 @@ nav .link {
 
 .navbar {
     width: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -125,10 +132,13 @@ nav .link {
     z-index: 1000;
 }
 .navbar p {
-    color: #fffefe;
     text-decoration: none;
-    font-size: 18px;
+
     margin: 0 15px;
+    font-family: "Playwrite BE VLG", cursive;
+    font-size: 25px;
+    color: black;
+    text-align: center;
 }
 .navbar a {
     background-color: #070707;
@@ -156,3 +166,4 @@ nav .link {
 .footer .text-muted {
     color: #6c757d;
 }
+
