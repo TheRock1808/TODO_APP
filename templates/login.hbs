@@ -8,11 +8,24 @@
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
     <script src="https://unpkg.com/htmx.org@2.0.0/dist/htmx.js"></script>
     <title>Login Form</title>
+    <link rel="stylesheet" href="/home.css">
+    <style>
+      .error {
+        padding: 10px; /* Add padding around the text */
+        margin-bottom: 10px; /* Add space between error messages */
+        color: #721c24; /* Text color (dark red) */
+        background-color: #f8d7da; /* Background color (light red) */
+        border: 1px solid #f5c6cb; /* Border color (lighter red) */
+        border-radius: 4px; /* Rounded corners */
+      }
+      
+    </style>
 </head>
 <body>
     <div class="container">
       <a hx-get="/" hx-target="body" hx-swap="innerHTML"><i class="fas fa-arrow-left"></i></a>
       <h1>LOGIN PAGE</h1>
+      <div class ="error">{{message}}</div>
       <!-- User name  -->
       <form
         id="loginForm"
@@ -52,5 +65,6 @@
         </div>
       </form>
     </div>
+    
 </body>
 </html>
