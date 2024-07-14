@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect("mongodb://127.0.0.1:27017/todoapp",{
+mongoose.connect("mongodb://localhost:27017/todoapp",{
 }).then(() =>{
     console.log("CONNECTED TO DATABASE");
 }).catch((e) =>{
@@ -9,6 +9,10 @@ mongoose.connect("mongodb://127.0.0.1:27017/todoapp",{
 
 const TodoSchema = new mongoose.Schema(
     {
+        email: {
+            type: String,
+            required: true,
+        },
         task: {
             type: String,
             required: true,

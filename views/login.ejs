@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.0/dist/htmx.js"></script>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="/style/home.css">
+    <style>
+        .error {
+            padding: 10px; /* Add padding around the text */
+            margin-bottom: 10px; /* Add space between error messages */
+            color: #721c24; /* Text color (dark red) */
+            background-color: #f8d7da; /* Background color (light red) */
+            border: 1px solid #f5c6cb; /* Border color (lighter red) */
+            border-radius: 4px; /* Rounded corners */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a hx-get="/" hx-target="body" hx-swap="innerHTML"><i class="fas fa-arrow-left"></i></a>
+        <h1>LOGIN PAGE</h1>
+        <div class="error"><%= message %></div>
+        <!-- User name  -->
+        <form id="loginForm" action="/loginform" method="post">
+            <div class="login-content">
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <input type="email" class="input" name="email" placeholder="Email" required />
+                </div>
+                <!-- Password -->
+                <div class="input-div pass">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                        <input type="password" class="input" name="password" placeholder="Password" required />
+                    </div>
+                </div>
+                <a hx-get="/signup" hx-target="body" hx-swap="innerHTML" class="cre">Create New Account</a>
+                <input type="submit" class="btn" value="Login" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>
