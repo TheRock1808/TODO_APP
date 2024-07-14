@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
     <link rel="stylesheet" href="/style/index.css">
-    
-    <script src="https://unpkg.com/htmx.org@2.0.1" integrity="sha384-QWGpdj554B4ETpJJC9z+ZHJcA/i59TyjxEPXiiUgN2WmTyV5OEZWCD6gQhgkdpB/" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/htmx.org@2.0.1"
+        integrity="sha384-QWGpdj554B4ETpJJC9z+ZHJcA/i59TyjxEPXiiUgN2WmTyV5OEZWCD6gQhgkdpB/"
+        crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
-
 </head>
+
 <body>
     <nav>
         <div class="navbar">
             <div>
                 <p>Todo App</p>
             </div>
-            
-            <a href="/logout" id="logout-btn">Logout</a> 
+            <a href="/logout" hx-get="/logout" hx-trigger="body" hx-swap="outerHTML">Logout</a>
         </div>
     </nav>
