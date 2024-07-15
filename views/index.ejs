@@ -2,6 +2,7 @@
     </div>
     <div class="container">
         <h1>To-Do List</h1>
+        <h1 class="callname">Welcome <%= naming %>!</h1>
         <div class="list" id="list">
             <!-- <div hx-get="/todos" hx-trigger="click" hx-target="#task-list" hx-swap="innerHTML" class="link Todo">List of Todos</div> -->
             <div hx-get="/todo/new" hx-trigger="click" hx-target="#list" hx-swap="innerHTML" class="link Todo">Add a Todo</div>

@@ -1,6 +1,5 @@
 const mongoose=require("mongoose")
 
-
 const logInSchema= new mongoose.Schema({
     name:{
         type:String,
