@@ -1,12 +1,13 @@
 <% todos.forEach((todo) => { %>
 
   <div class="task-item">
+    <h3 hx-put="/todo/<%= todo._id %>" hx-target="#task-list" ><%= todo.complete ? "🟢" : "🔴" %></h3>
       <h2><%= todo.task %></h2>
-      <h3 hx-put="/todo/<%= todo._id %>" hx-target="#task-list" ><%= todo.complete ? "🟢" : "🔴" %></h3>
+
       <button hx-delete="/todo/<%= todo._id %>/delete" hx-target="#task-list" hx-swap="innerHTML">Delete</button>
       <button hx-put="/todo/<%= todo._id %>" hx-target="#task-list" hx-swap="innerHTML">Complete</button>
   </div>
   <% }) %>
 <% if(todos.length === 0) { %>
-  <h2>No Todos</h2>
+  <h2>No Tasks</h2>
 <% } %>
